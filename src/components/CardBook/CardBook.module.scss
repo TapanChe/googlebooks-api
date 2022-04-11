@@ -1,0 +1,19 @@
+.CardBook {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: bisque;
+
+    > img {
+        width: 175px;
+        height: auto;
+    }
+
+    > p {
+        font-size: 16px;
+        padding: 20px;
+    }
+}
