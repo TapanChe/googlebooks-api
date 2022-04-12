@@ -19,19 +19,17 @@ const App = () => {
         setBooks(results.items);
     };
 
+    //Setting the state of search on each letter typed
     useEffect(() => {
-        if (search !== "" || undefined) {
+        if (search) {
             getBooks(search);
         }
     }, [search]);
 
-    const handleSubmit = (searchInput) => {
-        setSearch(searchInput);
-    };
-
+    //return to render the components
     return (
         <>
-            <Home onSubmit={handleSubmit} setSearch={setSearch} />
+            <Home setSearch={setSearch} search={search} />
             <ListBooks books={booksRepo} />
         </>
     );

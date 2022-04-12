@@ -1,17 +1,14 @@
 import React from "react";
 import styles from "./Home.module.scss";
-import { useState } from "react";
 
-const Home = ({ setSearch }) => {
-    //setting input value
-    const [inputValue, setInputValue] = useState("");
-
-    //searching based on change of text value in searchBar
+//receiving the props from app.js
+const Home = ({ setSearch, search }) => {
+    //setting the value for the search bar
     const handleChange = (event) => {
         setSearch(event.target.value);
-        setInputValue(event.target.value);
     };
 
+    //rendering th
     return (
         <>
             <header className={styles.Header}>
@@ -22,7 +19,7 @@ const Home = ({ setSearch }) => {
                     <input
                         className={styles.SearchBar__Input}
                         onChange={handleChange}
-                        value={inputValue}
+                        value={search}
                         id="searchInput"
                         type="text"
                     />

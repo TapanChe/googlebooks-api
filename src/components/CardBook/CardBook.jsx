@@ -3,6 +3,8 @@ import styles from "./CardBook.module.scss";
 //
 
 const CardBook = ({ book }) => {
+    // setting book details
+
     let title = book.volumeInfo.title ? book.volumeInfo.title : "Title Unknown";
     let authors = book.volumeInfo.authors
         ? book.volumeInfo.authors
@@ -16,8 +18,9 @@ const CardBook = ({ book }) => {
             ? book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail
             : "https://propertywiselaunceston.com.au/wp-content/themes/property-wise/images/no-image.png";
 
-    if (description !== undefined && description.length > 250) {
-        description = description.slice(0, 250) + " ...";
+    //cutting down description to 250 characters
+    if (description !== undefined && description.length > 150) {
+        description = description.slice(0, 150) + " ...";
     }
 
     return (
